@@ -221,6 +221,9 @@ public class MusicOrganizer
         }
     }
 
+    /**
+     * Devuelve el listado de todos los Tracks que estan en estos momentos.
+     */
     public void listAllTrackWithIterator()
     {
         Iterator<Track> ite = tracks.iterator();
@@ -228,6 +231,21 @@ public class MusicOrganizer
         {
             Track track = ite.next();
             System.out.println(track.getDetails());
+        }
+    }
+    
+    /**
+     * Elimina el elemento pasado por parametro.
+     */
+    public void removeByArtist(String cantante)
+    {
+        Iterator<Track> ite = tracks.iterator();
+        while(ite.hasNext())
+        {
+            Track track = ite.next();
+            if (track.getArtist().contains(cantante)){
+                ite.remove();
+            }
         }
     }
 
