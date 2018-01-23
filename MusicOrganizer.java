@@ -233,7 +233,7 @@ public class MusicOrganizer
             System.out.println(track.getDetails());
         }
     }
-    
+
     /**
      * Elimina el elemento pasado por parametro.
      */
@@ -249,4 +249,19 @@ public class MusicOrganizer
         }
     }
 
+    /**
+     * Metodo que elimina el tracks pasado por parametro.
+     */
+    public void removeByTitle(String title)
+    {
+        Iterator<Track> ite = tracks.iterator();
+        while(ite.hasNext())
+        {
+            Track track = ite.next();
+            if (track.getTitle().contains(title)){
+                ite.remove();
+            }
+        }
+    }
+    
 }
